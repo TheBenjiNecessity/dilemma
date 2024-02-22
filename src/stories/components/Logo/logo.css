@@ -1,0 +1,67 @@
+.logo {
+    position: relative;
+    width: 280px;
+    transform: rotate(-5deg);
+}
+
+.logo .arrow {
+    display: inline-block;
+    width: 140px;
+}
+
+.logo .arrow .square-wrapper {
+    display: inline-block;
+    width: 80px;
+    height: 120px;
+    padding: 20px 0;
+}
+
+.logo .arrow .square-shape {
+    width: 100%;
+    height: 100%;
+}
+
+.logo .arrow.left .square-shape {
+    background-color: #eba53b;
+}
+
+.logo .arrow.right .square-shape {
+    background-color: #357cbc;
+}
+
+.logo .arrow .triangle {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.logo .arrow.left .triangle {
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-right-width: 60px;
+    border-right-color: #eba53b;
+}
+
+.logo .arrow.right .triangle {
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-left-width: 60px;
+    border-left-color: #357cbc;
+}
+
+.logo .text {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    font-size: 40px;
+    color: white;
+    font-family: "Rockwell", "Arial Narrow", Arial, sans-serif;
+}
+
+.logo .arrow.right {
+    position: absolute;
+    top: 20px;
+}
