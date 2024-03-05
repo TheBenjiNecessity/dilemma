@@ -1,15 +1,16 @@
 import { PORT } from "@/config/app";
 import { io } from "socket.io-client";
 
-export default function socketClient(room: string) {
+export default function socketClient(roomcode: string) {
+    // TODO this should be a singleton
     const socket = io(`:${PORT + 1}`, {
-        path: "/api/socket",
+        //path: "/api/socket",
         addTrailingSlash: false,
     });
 
     socket.on("connect", () => {
         console.log("Connected");
-        socket.emit("connection-start", { room });
+        socket.emit("connection-start", { room: { roomcode } });
     });
 
     socket.on("disconnect", () => {
@@ -18,7 +19,6 @@ export default function socketClient(room: string) {
 
     socket.on("connect_error", async (err) => {
         console.log(`connect_error due to ${err.message}`);
-        await fetch("/api/socket");
     });
 
     return socket;
