@@ -1,8 +1,8 @@
 import SocketUserList from "@/components/SocketUserList";
 import { Logo } from "@/stories/components/Logo/Logo";
-import Link from "next/link";
+import { redirect } from "next/dist/server/api-utils";
 
-export default async function Host({
+export default async function Game({
     params: { roomcode },
 }: {
     params: { roomcode: string };
@@ -14,18 +14,7 @@ export default async function Host({
                     {roomcode}
                 </div>
             </div>
-            <div className="absolute top-0 right-0 p-4">
-                <Logo>Dilemma</Logo>
-            </div>
-            <div>
-                <SocketUserList roomcode={roomcode} />
-            </div>
-            <Link
-                href={`/host/${roomcode}/game`}
-                className="p-4 rounded shadow bg-primary-500 text-lg uppercase"
-            >
-                Start Game
-            </Link>
+            <div>Game</div>
         </main>
     );
 }
